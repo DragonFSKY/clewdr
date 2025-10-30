@@ -477,7 +477,7 @@ async fn fetch_usage_percent(
 
     // Discover organization UUID (prefer chat-capable org)
     let orgs_url = format!(
-        "{}/api/organizations",
+        "{}api/organizations",
         endpoint.as_str().trim_end_matches('/')
     );
     let orgs_res = client
@@ -514,7 +514,7 @@ async fn fetch_usage_percent(
 
     // Query usage from console API
     let usage_url = format!(
-        "{}/api/organizations/{}/usage",
+        "{}api/organizations/{}/usage",
         CLAUDE_CONSOLE_ENDPOINT, org_uuid
     );
     let usage_res = client.request(Method::GET, usage_url).send().await.ok()?;

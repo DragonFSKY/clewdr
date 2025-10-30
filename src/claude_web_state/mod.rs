@@ -179,7 +179,7 @@ impl ClaudeWebState {
             return Ok(());
         };
         let endpoint = format!(
-            "{}/api/organizations/{}/chat_conversations/{}",
+            "{}api/organizations/{}/chat_conversations/{}",
             self.endpoint, org_uuid, conv_uuid
         );
         debug!("Deleting chat: {}", conv_uuid);

@@ -25,7 +25,7 @@ impl ClaudeWebState {
     /// # Returns
     /// * `Result<(), ClewdrError>` - Success or an error with details about cookie validity
     pub async fn bootstrap(&mut self) -> Result<(), ClewdrError> {
-        let end_point = format!("{}/api/bootstrap", self.endpoint);
+        let end_point = format!("{}api/bootstrap", self.endpoint);
         let res = self
             .build_request(Method::GET, end_point)
             .send()
@@ -84,7 +84,7 @@ impl ClaudeWebState {
         )?;
 
         // Bootstrap complete
-        let end_point = format!("{}/api/organizations", self.endpoint);
+        let end_point = format!("{}api/organizations", self.endpoint);
         let res = self
             .build_request(Method::GET, end_point)
             .send()

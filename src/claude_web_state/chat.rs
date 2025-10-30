@@ -105,7 +105,7 @@ impl ClaudeWebState {
         // Create a new conversation
         let new_uuid = uuid::Uuid::new_v4().to_string();
         let endpoint = format!(
-            "{}/api/organizations/{}/chat_conversations",
+            "{}api/organizations/{}/chat_conversations",
             self.endpoint, org_uuid
         );
         let body = json!({
@@ -136,7 +136,7 @@ impl ClaudeWebState {
         };
 
         let endpoint = format!(
-            "{}/api/organizations/{}/chat_conversations/{}",
+            "{}api/organizations/{}/chat_conversations/{}",
             self.endpoint, org_uuid, new_uuid
         );
         let _ = self
@@ -160,7 +160,7 @@ impl ClaudeWebState {
         // send the request
         print_out_json(&body, "claude_web_clewdr_req.json");
         let endpoint = format!(
-            "{}/api/organizations/{}/chat_conversations/{}/completion",
+            "{}api/organizations/{}/chat_conversations/{}/completion",
             self.endpoint, org_uuid, new_uuid
         );
 
